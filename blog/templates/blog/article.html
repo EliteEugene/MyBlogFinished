@@ -1,0 +1,35 @@
+{% extends 'blog/base.html' %}
+{% load django_markdown %}
+
+{% block content %}
+<h2>
+    <a href="/">Back</a>
+</h2>
+<div class="container main-content">
+    {% block title %}
+    <div class="article-heading">
+        <h1>{{ article.title }}</h1>
+        <span class="meta">
+            {{ article.created | date }} | {% for tag in article.tags.all %}
+            <a href="{{ tag.get_absolute_url }}" >{{ tag }}</a>
+            {% if not forloop.last %}
+                ,
+                {% endif %}
+                {% endfor %}
+        </span>
+    </div>
+    {% endblock %}
+    <hr>
+
+    <div class="container">
+        <div class="row">{{ article.text|markdown }}</div>
+
+        <hr>
+
+        <br>
+        {% load disqus_tags %}
+    {% disqus_show_comments 'elliteblog' %}
+    {% set_disqus_url article.get_absolute_url %}
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+<div class="container main-content">
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="list-group">
+                {% for category in categories %}
+                <h4>
+                    <a href="{{ category.get_absolute_url }}" class="list-group-item">
+                        {{ category.name }}
+                        <span class="badge">{{category.count_articles}}</span>
+                    </a>
+                </h4>
+                {% empty %}
+                <p>No posts matched</p>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

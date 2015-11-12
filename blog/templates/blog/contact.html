@@ -1,0 +1,40 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+<div class="container main-content">
+<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+	<form action="{% url 'blog:contact' %}" method="post" class="form-horizontal">
+		{% csrf_token %}
+		<div class="form-group">
+			<label for="id_subject" class="col-sm-2 control-label">Тема:</label>
+			<div class="col-sm-10">
+				<input type="text" class="form-control" placeholder="Тема" name="subject"></div>
+		</div>
+		<div class="form-group">
+			<label for="id_sender" class="col-sm-2 control-label">E-mail:</label>
+			<div class="col-sm-10">
+				<input type="email" class="form-control" name="sender" placeholder="Email"></div>
+		</div>
+		<div class="form-group">
+			<label for="id_message" class="col-sm-2 control-label">Сообщение:</label>
+			<div class="col-sm-10">
+				<textarea class="form-control" rows="3" name="message"></textarea>
+			</div>
+		</div>
+		<div class="form-group">
+			<div class="col-sm-offset-2 col-sm-10">
+				<div class="checkbox">
+					<label for="id_copy">
+						<input type="checkbox" name="copy">Отправить копию себе</label>
+				</div>
+			</div>
+		</div>
+		<div class="form-group">
+			<div class="col-sm-offset-2 col-sm-10">
+				<button type="submit" class="btn btn-default">Отправить</button>
+			</div>
+		</div>
+	</form>
+</div>
+</div>
+{% endblock %}

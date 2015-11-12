@@ -1,0 +1,28 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+<div class="container main-content">
+<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+    <form action="/auth/login/" method="post" class="form-horizontal">
+      {% csrf_token %}
+      <div class="form-group">
+        <label for="username" class="col-sm-2 control-label">Имя пользователя</label>
+        <div class="col-sm-10">
+          <input type="text" name="username" id="username" class="form-control"></div>
+      </div>
+      <div class="form-group">
+        <label for="password" class="col-sm-2 control-label">Пароль</label>
+        <div class="col-sm-10">
+          <input type="password" name="password" id="password" class="form-control"></div>
+      </div>
+      {% if login_error %}
+      <label class="error">{{ login_error }}</label>
+      {% endif %}
+      <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+          <input class="btn btn-success" type="submit" value="Войти" class="btn btn-default"><a href="/auth/register/" class="btn btn-link">Registration</a></div>
+        </div>
+    </form>
+</div>
+  </div>
+{% endblock %}
