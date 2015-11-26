@@ -3,19 +3,22 @@
 <div class="container main-content">
     <div class="row">
         <h1>{{ category }}:</h1>
-        
-            {% for article in articles_list %}
-            <h4>
-                <a href="{{ article.get_absolute_url }}">{{ article.title }}</a>
-            </h4>
-            <p class="article-meta">
-                {{ article.created | date }} | {{ article.tags.all | join:", " }}
-            </p>
-            <hr>
-            {% empty %}
-            <h4>articles not found</h4>
-            {% endfor %}
-       
+        {% for article in articles_list %}
+        <h4>
+            <a href="{{ article.get_absolute_url }}">{{ article.title }}</a>
+        </h4>
+        <p class="article-meta">
+            {{ article.created | date }} | {% for tag in article.tags.all %}
+            <a href="{{ tag.get_absolute_url }}" >{{ tag }}</a>
+            {% if not forloop.last %}
+                ,
+                {% endif %}
+                {% endfor %}
+        </p>
+        <hr>
+        {% empty %}
+        <h4>articles not found</h4>
+        {% endfor %}
     </div>
 </div>
 {% endblock content %}

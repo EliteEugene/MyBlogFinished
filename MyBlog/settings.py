@@ -24,6 +24,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+ADMINS = (('Eugene', 'serebryakov1409@gmail.com'), )
+
 
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
@@ -52,6 +54,9 @@ INSTALLED_APPS = (
 
     'blog',
     'loginsys',
+    'contact',
+
+    'bootstrapform',
 
     #'tinymce',
     'django_markdown',
@@ -65,14 +70,6 @@ MEDIA_URL = '/media/'
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
-'''
-FILEBROWSER_MEDIA_ROOT = MEDIA_ROOT 
-FILEBROWSER_MEDIA_URL = MEDIA_URL 
-FILEBROWSER_STATIC_ROOT = STATIC_ROOT 
-FILEBROWSER_STATIC_URL = STATIC_URL 
-URL_FILEBROWSER_MEDIA = STATIC_URL + 'filebrowser/' 
-PATH_FILEBROWSER_MEDIA = STATIC_ROOT + 'filebrowser/' 
-'''
 
 AUTHENTICATION_BACKENDS = (
     "django.contrib.auth.backends.ModelBackend",

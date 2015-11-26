@@ -1,0 +1,46 @@
+{% extends 'blog/base.html' %}
+
+{% load bootstrap %}
+
+{% block content %}
+<div class="container main-content">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <form id="ajaxform" action="{% url 'contact:contact_form' %}" method="post">
+            {% csrf_token %}
+             {{ form.non_field_errors }}
+
+
+             <div> 
+
+             {{ form.name|bootstrap_horizontal }}
+
+              </div>
+
+             <div>  
+
+             {{ form.email|bootstrap_horizontal }}
+
+              </div>
+
+              <div>  
+
+              {{ form.message|bootstrap_horizontal }} 
+
+              </div>
+
+            <div id="loading" style="display:none;">
+                <span id="load_text">loading...</span>
+            </div>
+            <div id="form_ajax" style="display:none;">
+                <span>Form submit successfully.</span>
+            </div>
+            <div id="form_ajax_error" style="display:none;">
+                <span>Can not submit data due to errors.</span>
+            </div>
+            <p id="sendwrapper">
+                <input type="submit" value="Send" class="btn btn-default" id="sendbutton"/>
+            </p>
+        </form>
+    </div>
+</div>
+{% endblock %}

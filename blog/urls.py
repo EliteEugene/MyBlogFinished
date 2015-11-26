@@ -2,7 +2,8 @@ from django.conf.urls import url
 from . import views
 
 urlpatterns = [
-    url(r'^contact/', 'blog.views.ContactView', name = 'contact'),
+    #url(r'^contact/', 'blog.views.ContactView', name = 'contact'),
+    #url(r'^contact/', FormView.as_view(form_class=Contact, success_url='/thanks/'),
     url(r'^category/$', 'blog.views.getCategory', name = 'category'),
     url(r'^category/(?P<categorySlug>\S+)/$', 'blog.views.getCategorySearch', name = 'category_search'),
     url(r'^tag/(?P<tagSlug>\S+)/$', 'blog.views.getTagSearch', name = 'tag_search'),

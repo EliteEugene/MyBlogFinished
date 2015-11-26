@@ -22,14 +22,15 @@ from filebrowser.sites import site
 admin.autodiscover()
 
 urlpatterns = [
-    url(r'^admin/filebrowser/', include(site.urls)),
+    #url(r'^admin/filebrowser/', include(site.urls)),
     url(r'^grappelli/', include('grappelli.urls')), # grappelli URLS
     url(r'^admin/', include(admin.site.urls)),
     url(r'^articles/comments/', include('django_comments.urls')),
     url(r'^search/', include('haystack.urls', namespace="search")),
     url(r'^auth/', include('loginsys.urls')),
-    url(r'^tinymce/', include('tinymce.urls')),
+    #url(r'^tinymce/', include('tinymce.urls')),
     url('^markdown/', include( 'django_markdown.urls')),
+    url(r'^contact/', include('contact.urls', namespace="contact")),
     url(r'^', include('blog.urls', namespace="blog")),
 
 ] 

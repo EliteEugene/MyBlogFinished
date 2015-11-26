@@ -9,6 +9,9 @@ from django.views.generic.edit import FormView
 from django import forms
 from django.contrib import auth
 
+import json
+from django.http import HttpResponseBadRequest
+
 def articles(request, page_number=1):
     all_articles = Article.objects.published()
     paginator = Paginator(all_articles, 3)
@@ -31,6 +34,8 @@ def article(request, slug):
 def about(request):
     return render(request, 'blog/about.html')
 
+
+'''
 def ContactView(request):
     if request.method == 'POST':
         form = ContactForm(request.POST)
@@ -52,6 +57,7 @@ def ContactView(request):
         form = ContactForm()
     return render(request, 'blog/contact.html', {'form' : form, 'username': auth.get_user(request).username})
 
+'''
 
 def getCategory(request):
     # Get specified category
