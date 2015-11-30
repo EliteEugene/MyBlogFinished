@@ -38,7 +38,7 @@ SITE_ID = 1
 
 INSTALLED_APPS = (
     'grappelli',
-    'filebrowser',
+    #'filebrowser',
     
     'django.contrib.admin',
     'django.contrib.auth',
@@ -58,7 +58,6 @@ INSTALLED_APPS = (
 
     'bootstrapform',
 
-    #'tinymce',
     'django_markdown',
 )
 

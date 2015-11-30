@@ -1,32 +1,32 @@
 {% extends 'blog/base.html' %}
-
-{% load bootstrap %}
-
+<!--{% load bootstrap %}-->
 {% block content %}
+
+
 <div class="container main-content">
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        <form id="ajaxform" action="{% url 'contact:contact_form' %}" method="post">
+
+        <form id="ajaxform" action="{% url 'contact:contact_form' %}" method="post" class="form-horizontal">
             {% csrf_token %}
-             {{ form.non_field_errors }}
-
-
-             <div> 
-
-             {{ form.name|bootstrap_horizontal }}
-
-              </div>
-
-             <div>  
-
-             {{ form.email|bootstrap_horizontal }}
-
-              </div>
-
-              <div>  
-
-              {{ form.message|bootstrap_horizontal }} 
-
-              </div>
+            <div class="form-group">
+                <label for="name" class="col-sm-2 control-label">Имя пользователя</label>
+                <div class="col-sm-10">
+                    <input type="text" name="name" id="name" class="form-control"></div>
+            </div>
+            <div class="form-group">
+                <label for="email" class="col-sm-2 control-label">E-mail</label>
+                <div class="col-sm-10">
+                    <input type="email" name="email" id="email" class="form-control"></div>
+            </div>
+            <div class="form-group">
+                <label for="name" class="col-sm-2 control-label">Сообщение</label>
+                <div class="col-sm-10">
+                    <textarea type="message" name="message" id="message" class="form-control"></textarea></div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <input class="btn btn-default" type="submit" value="Отправить"></div>
+            </div>
 
             <div id="loading" style="display:none;">
                 <span id="load_text">loading...</span>
@@ -37,9 +37,6 @@
             <div id="form_ajax_error" style="display:none;">
                 <span>Can not submit data due to errors.</span>
             </div>
-            <p id="sendwrapper">
-                <input type="submit" value="Send" class="btn btn-default" id="sendbutton"/>
-            </p>
         </form>
     </div>
 </div>
