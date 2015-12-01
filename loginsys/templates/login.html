@@ -3,7 +3,7 @@
 {% block content %}
 <div class="container main-content">
 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-    <form action="/auth/login/" method="post" class="form-horizontal">
+    <form action="/auth/login/" method="post" class="form-horizontal" class='validForm'>
       {% csrf_token %}
       <div class="form-group">
         <label for="username" class="col-sm-2 control-label">Имя пользователя</label>
@@ -20,7 +20,7 @@
       {% endif %}
       <div class="form-group">
         <div class="col-sm-offset-2 col-sm-10">
-          <input class="btn btn-success" type="submit" value="Войти" class="btn btn-default"><a href="/auth/register/" class="btn btn-link">Registration</a></div>
+          <input class="btn btn-success" type="submit" value="Войти" class="btn btn-default"><a href="/auth/register/" class="btn btn-link">Регистрация</a></div>
         </div>
     </form>
 </div>
