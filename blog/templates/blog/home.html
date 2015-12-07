@@ -1,11 +1,11 @@
 {% extends 'blog/base.html' %}
 {% load django_markdown %}
 {% load disqus_tags %}
-
 {% block content %}
 <div class="container main-content">
     <div class="row">
         {% for article in articles_list %}
+        <div class="article_header">
         <h4>
             <a href="{{ article.get_absolute_url }}">{{ article.title }}</a>
         </h4>
@@ -13,53 +13,69 @@
             {{ article.created | date }} | {% for tag in article.tags.all %}
             <a href="{{ tag.get_absolute_url }}" >{{ tag }}</a>
             {% if not forloop.last %}
-                ,
-                {% endif %}
-                {% endfor %}
+                            ,
+                        {% endif %}
+                    {% endfor %}
         </p>
-
-        <pre>{{ article.get_short_text|markdown }}</pre>
-        
-
-        <a href="{{ article.get_absolute_url }}#disqus_thread" data-disqus-identifier="{{ article.id }}">View Comments</a>
-        {% disqus_num_replies %}
-        <hr>
-        {% endfor %}
     </div>
 
-        <div class="row">
-         <ul class="pagination">
-                {% if articles_list.has_previous %}
-                <li>
-                    <a href="/page/{{ articles_list.previous_page_number }}/" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a>
-                </li>
-                {% else %}
-                <li class="disabled">
-                    <a href="">&laquo;</a>
-                </li>
-                {% endif %}
-            {% for page in articles_list.paginator.page_range %}
-            {% if page == articles_list.number %}
-                <li class="active">
-                    <a href="/page/{{ page }}/">{{ page }}<span class="sr-only">(current)</span></a></li>
-                    {% else %}
-                    <li>
-                           <a href="/page/{{ page }}/">{{ page }}</a>
-                    </li>
-                    {% endif %}
-            {% endfor %}
-            {% if articles_list.has_next %}
-                    <li>
-                    <a href="/page/{{ articles_list.next_page_number }}/" aria-label="Next"><span aria-hidden="true">&raquo;</span></a>
-                    </li>
-                    {% else %}
-                    <li class="disabled">
-                        <a href="">&raquo;</a>
-                    </li>
-                    {% endif %}
-                </ul>
-        </div>
-</div>
+    <div class="article_preview">
+        <pre>
+                                        {{ article.text|markdown }}
+                    
+                    </pre>
+    </div>
 
+
+<div class="article_links">
+<a class="show_more" >Больше букв!</a>
+<a class="show_less" >Меньше букв!</a>
+
+<a class ="pull-right" href="{{ article.get_absolute_url }}#disqus_thread" data-disqus-identifier="{{ article.id }}">View Comments</a>
+{% disqus_num_replies %}
+</div>
+<hr>{% endfor %}</div>
+
+<div class="row">
+<ul class="pagination">
+    {% if articles_list.has_previous %}
+    <li>
+        <a href="/page/{{ articles_list.previous_page_number }}/" aria-label="Previous">
+            <span aria-hidden="true">&laquo;</span>
+        </a>
+    </li>
+    {% else %}
+    <li class="disabled">
+        <a href="">&laquo;</a>
+    </li>
+    {% endif %}
+                    {% for page in articles_list.paginator.page_range %}
+                        {% if page == articles_list.number %}
+    <li class="active">
+        <a href="/page/{{ page }}/">
+            {{ page }}
+            <span class="sr-only">(current)</span>
+        </a>
+    </li>
+    {% else %}
+    <li>
+        <a href="/page/{{ page }}/">{{ page }}</a>
+    </li>
+    {% endif %}
+                    {% endfor %}
+                    {% if articles_list.has_next %}
+    <li>
+        <a href="/page/{{ articles_list.next_page_number }}/" aria-label="Next">
+            <span aria-hidden="true">&raquo;</span>
+        </a>
+    </li>
+    {% else %}
+    <li class="disabled">
+        <a href="">&raquo;</a>
+    </li>
+    {% endif %}
+</ul>
+</div>
+</div>
 </div>
 {% endblock %}

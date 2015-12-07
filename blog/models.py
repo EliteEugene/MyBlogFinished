@@ -46,7 +46,6 @@ class Article(models.Model):
     publish = models.BooleanField(default=False)
     created = models.DateTimeField()
     modified = models.DateTimeField()
-    #image = models.ImageField()
     tags = models.ManyToManyField(Tag)
     category = models.ForeignKey(Category, related_name='articles')
 
@@ -68,6 +67,10 @@ class Article(models.Model):
             return self.text[:SHORT_TEXT_LEN]
         else:
             return self.text
+
+    def get_rest_text(self):
+        return self.text[SHORT_TEXT_LEN:]
+
 
     def was_published_recently(self):
         now = timezone.now()

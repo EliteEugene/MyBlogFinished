@@ -14,7 +14,7 @@ from django.http import HttpResponseBadRequest
 
 def articles(request, page_number=1):
     all_articles = Article.objects.published()
-    paginator = Paginator(all_articles, 3)
+    paginator = Paginator(all_articles, 4)
     page = request.GET.get('page')
     try:
         articles = paginator.page(page)

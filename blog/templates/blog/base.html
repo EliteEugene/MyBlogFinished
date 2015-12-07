@@ -17,33 +17,27 @@
   <!-- Custom styles for this template -->
   <link href="{% static 'blog/style.css' %}" rel="stylesheet">
 
+  <!-- <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
-    <!-- <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script> -->
+<script type="text/javascript" src="http://malsup.github.com/min/jquery.form.min.js"></script>
+<script type="text/javascript" src="{% static 'blog/js/script1.js' %}"></script>
+<script type="text/javascript" src="{% static 'contact/js/script.js' %}"></script>
 
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-
-  
-    <script type="text/javascript" src="http://malsup.github.com/min/jquery.form.min.js"></script>
-    <script type="text/javascript" src="{% static 'contact/js/script.js' %}"></script>
-
-
-    <style>
+<style>
         #form_ajax_error, .errorlist {
             color: red;
         }
     </style>
 
-
-
-
-
-  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-  <!--[if lt IE 9]>
-  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-  <![endif]-->
-  {% block javascript %}{% endblock %}
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+<![endif]-->
+{% block javascript %}{% endblock %}
     {% block extrahead %}{% endblock %}
 </head>
 
@@ -79,8 +73,8 @@
         <button type="submit" class="btn vtn-default">Search</button>
       </form>
     </div>
-        <div id="navbar" class="navbar-collapse collapse">
-          <ul class="nav navbar-nav navbar-right">
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav navbar-right">
         {% if username %}
         <li>
           <a href="/auth/logout/">Log out ({{ username }})</a>
@@ -94,23 +88,19 @@
     </div>
     <!--/.navbar-collapse --> </div>
 </nav>
-  </div>
 </div>
-
-  {% block content %}
+</div>
+{% block content %}
 {% endblock %}
 {% block login %}{% endblock %}
-  <!-- Bootstrap core JavaScript
+<!-- Bootstrap core JavaScript
     ================================================== -->
-  <!-- Placed at the end of the document so the pages load faster -->
-
+<!-- Placed at the end of the document so the pages load faster -->
+<a href="#" class="back-to-top">Вверх!</a>
 </body>
 
-      <!-- FOOTER -->
-      <footer>
-      <div class="container">
-        <p class="pull-right"><a href="#">Back to top</a></p>
-        <p>&copy; 2015 ElliteEugene, Inc.</p>
-      </footer>
-      </div>
+<!-- FOOTER -->
+<footer>
+</footer>
+</div>
 </html>
