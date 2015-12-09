@@ -47,34 +47,34 @@
       </button>
       <ul class="nav navbar-nav">
         <li>
-          <a href="{% url 'blog:home' %}">Home</a>
+          <a href="{% url 'blog:home' %}">Главная</a>
+        </li>
+        <!--<li>
+          <a href="{% url 'blog:about' %}"></a>
+        </li>-->
+        <li>
+          <a href="{% url 'contact:contact_form' %}">Обратная связь</a>
         </li>
         <li>
-          <a href="{% url 'blog:about' %}">About</a>
-        </li>
-        <li>
-          <a href="{% url 'contact:contact_form' %}">Contact</a>
-        </li>
-        <li>
-          <a href="{% url 'blog:category' %}">Categories</a>
+          <a href="{% url 'blog:category' %}">Категории</a>
         </li>
       </ul>
       <form method="get" action="{% url 'search:haystack_search' %}" class="navbar-form navbar-left" role="search">
         <div class="form-group">
-          <label for="id_q" class="sr-only">search</label>
+          <label for="id_q" class="sr-only">Поиск</label>
           <input type="text" class="form-control" id="id_q" name="q"></div>
-        <button type="submit" class="btn vtn-default">Search</button>
+        <button type="submit" class="btn vtn-default">Поиск</button>
       </form>
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav navbar-right">
         {% if username %}
         <li>
-          <a href="/auth/logout/">Log out ({{ username }})</a>
+          <a href="/auth/logout/">Выйти ({{ username }})</a>
         </li>
         {% else %}
         <li>
-          <a href="/auth/login/">Login</a>
+          <a href="/auth/login/">Войти</a>
         </li>
         {% endif %}
       </ul>
@@ -85,7 +85,7 @@
 </div>
 {% block content %}
 {% endblock %}
-{% block login %}{% endblock %}
+{% block ойти %}{% endblock %}
 <!-- Bootstrap core JavaScript
     ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
