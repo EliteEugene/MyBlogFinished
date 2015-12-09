@@ -35,29 +35,6 @@ def about(request):
     return render(request, 'blog/about.html')
 
 
-'''
-def ContactView(request):
-    if request.method == 'POST':
-        form = ContactForm(request.POST)
-        if form.is_valid():
-            subject = form.cleaned_data['subject']
-            sender = form.cleaned_data['sender']
-            message = form.cleaned_data['message']
-            copy = form.cleaned_data['copy']
-            recipients = ['serebryakov1409@gmail.com']
-            if copy:
-                recipients.append(sender)
-            try:
-                message += ' ' + sender
-                send_mail(subject, message, 'serebryakov1409@gmail.com', recipients)
-            except BadHeaderError:   #Защита от уязвимости
-                return HttpResponse('Invalid header found')
-            return render(request, 'blog/thanks.html')
-    else:
-        form = ContactForm()
-    return render(request, 'blog/contact.html', {'form' : form, 'username': auth.get_user(request).username})
-
-'''
 
 def getCategory(request):
     # Get specified category

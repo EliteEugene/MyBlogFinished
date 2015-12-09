@@ -3,13 +3,13 @@
 {% block content %}
  <div class="container main-content"> 
         {% if query %}
-            <h4>Results: {{query}}</h4>
+            <h4>Результаты поиска: {{query}}</h4>
             {% for result in page.object_list %}
                 <p>
                     <a href="{{ result.object.get_absolute_url }}">{{ result.object.title }}</a>
                 </p>
             {% empty %}
-                <p>No results found.</p>
+                <p>Ничего не найдено.</p>
             {% endfor %}  
         {% endif %}
 </div>
