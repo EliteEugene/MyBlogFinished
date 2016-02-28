@@ -1,16 +1,7 @@
-from django.views import generic
-from django.views.generic.base import View
-from .models import Article, ContactForm, Category, Tag
+from .models import Article, Category
 from django.shortcuts import render, render_to_response
-from django.http import HttpResponse, HttpResponseRedirect
-from django.core.mail import send_mail, BadHeaderError
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
-from django.views.generic.edit import FormView
-from django import forms
 from django.contrib import auth
-
-import json
-from django.http import HttpResponseBadRequest
 
 def articles(request, page_number=1):
     all_articles = Article.objects.published()

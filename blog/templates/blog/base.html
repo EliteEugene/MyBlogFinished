@@ -17,41 +17,40 @@
   <!-- Custom styles for this template -->
   <link href="{% static 'blog/style.css' %}" rel="stylesheet">
 
-
-
-<style>
+  <style>
         #form_ajax_error, .errorlist {
             color: red;
         }
     </style>
 
-<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-<!--[if lt IE 9]>
-<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-<![endif]-->
-{% block javascript %}{% endblock %}
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+  {% block javascript %}{% endblock %}
     {% block extrahead %}{% endblock %}
 </head>
 
 <body>
 
-<nav class="navbar navbar-inverse navbar-fixed-top">
-  <div class="container">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <ul class="nav navbar-nav">
-        <li>
-          <a href="{% url 'blog:home' %}">Главная</a>
-        </li>
-        <!--<li>
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <ul class="nav navbar-nav">
+          <li>
+            <a href="{% url 'blog:home' %}">Главная</a>
+          </li>
+          <!--<li>
           <a href="{% url 'blog:about' %}"></a>
-        </li>-->
+        </li>
+        -->
         <li>
           <a href="{% url 'contact:contact_form' %}">Обратная связь</a>
         </li>
@@ -100,11 +99,9 @@
 <script type="text/javascript" src="{% static 'blog/js/script1.js' %}"></script>
 <script type="text/javascript" src="{% static 'contact/js/script.js' %}"></script>
 
-
 </body>
 
 <!-- FOOTER -->
-<footer>
-</footer>
+<footer></footer>
 </div>
 </html>

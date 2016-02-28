@@ -45,7 +45,7 @@ class Article(models.Model):
     slug = models.SlugField(max_length=200, unique=True)
     publish = models.BooleanField(default=False)
     created = models.DateTimeField()
-    modified = models.DateTimeField()
+    modified = models.DateTimeField(auto_now=True)
     tags = models.ManyToManyField(Tag)
     category = models.ForeignKey(Category, related_name='articles')
 
