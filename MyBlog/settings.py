@@ -29,7 +29,7 @@ ADMINS = (('Eugene', 'serebryakov1409@gmail.com'), )
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = 'serebryakov1409@gmail.com'
-EMAIL_HOST_PASSWORD = 'a2lxXN1012641'
+EMAIL_HOST_PASSWORD = '***'
 
 
 SITE_ID = 1
