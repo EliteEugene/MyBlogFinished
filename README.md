@@ -1,3 +1,3 @@
 # MyBlogFinished
 
-## Tags, Categories, Search(ElasticSearch), Pagination, Images in articles, Log in, Log up, Comments(Disqus), Feedback form.
+## Tags, Categories, Search(ElasticSearch), Pagination, Images in articles, Log in, Sign up, Comments(Disqus), Feedback form.
